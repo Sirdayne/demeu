@@ -7,21 +7,68 @@
 @f-l: "GothamProLight";
 
 @color: #212573;
+@green: #a7c030;
+
+@wrap-width: 85%;
+@wrap-max: 1400px;
 
 button, input{
     font-family: @f-l;
 }
 
-.modal-wrapper{ display: none; }
+@-webkit-keyframes aniline { 
+    0% { height: 0; } 
+    100% { height: 100%; } 
+}
+@keyframes aniline { 
+    0% { height: 0; } 
+    100% { height: 100%; } 
+}
+.aniline { -webkit-animation-name: aniline; animation-name: aniline; }
 
-.wrap{display: block; width: 85%; margin: auto; max-width: 1280px; }
+.modal-back{ position: fixed; top: 0; left: 0; width: 100%; height: 9000px; background: rgba(0,0,0,0.5); z-index: 11; display: none; }
+
+.modal-wrapper{ position: fixed; height: 0; top: 0; left: 0; width: 100%; z-index: 12; }
+
+.modal-close{  position: absolute; height: 40px;  width: 40px; 
+    background: url(../img/modal-close.png) center center no-repeat; background-size: cover;
+    top: 25px; right: 25px; cursor: pointer;}
+
+.modal .modal-close, .modal-calc .modal-close{  top: 10px;  right: 10px;  height: 30px;   width: 30px; }
+
+.opacity-one{ opacity: 1; }
+
+.modal{  display: block;  margin: 150px auto;  height: auto;  min-height: 200px; width: 700px; background: #fff; color: #3b3b3b;
+    text-align: center; z-index: 4; padding-top: 20px; padding-bottom: 2px; display: none; position: relative; }
+
+.btns-row{ float: left; width: 100%; margin-top: 25px;}
+
+.modal input { display: inline-block; width: 140px; padding: 10px 25px; margin-right: 20px; margin-left: 20px; height: 12px; outline: none;
+    border: none; border: 1px solid #5d4063; background: rgba(0,0,0,0); -webkit-transition: .2s linear; transition: .2s linear; font-size: 12px; font-family: @f-r; 
+}
+
+.send-btn{
+    display: inline-block;
+}
+
+.modal-title{ float: left; width: 100%; text-align: center; margin-top: 20px; font-size: 16px; font-family: @f-m; color: @color;}
+
+.thx{
+    display: block; margin: 150px auto; height: auto;
+    width: 350px; background: #fff; color: @color;
+    -webkit-border-radius: 15px; -moz-border-radius: 15px; border-radius: 15px;
+    outline: none; border: none; border: 1px solid #5d4063; font-size: 17px; padding-top: 40px;
+    padding-bottom: 40px; text-align: center; z-index: 13; display: none;
+}
+
+.wrap{display: block; width: @wrap-width;  max-width: @wrap-max; margin: auto;}
 
 .header{ float: left; box-sizing: border-box; padding: 80px 0 130px;  width: 100%; height: auto; background: url(../img/header-back.png) center center no-repeat; background-size: cover;
         &__telephone{ text-align: right; font-size: 12px; color: #fff;}
         &__block{ float: left; width: 100%; margin-top: 90px; position: relative; 
                 & h1{ width: 42%; font-weight: normal; font-family: @f-b; font-size: 16px; color: #fff; text-transform: uppercase; }
                 & p{ width: 42%; margin-top: 15px; font-weight: normal; font-family: @f-l; font-size: 14px; color: #fff; }
-                &__img{ margin-left: 6%; width: 52%; position: absolute; top: 0; right: 0;
+                &__img{ width: 52%; position: absolute; top: 0; right: 0;
                         & img{ width: 100%; height: auto; }
                 }
         
@@ -39,11 +86,11 @@ button, input{
 }
 
 /* SERVICES SECTION */
-.our-services{ float: left; width: 100%; margin-top: 200px; }
+.our-services{ float: left; width: 100%; margin-top: 270px; }
 
 .services-title{ float: left; width: auto; height: 500px; display: table; 
                 &__box{ display: table-cell; vertical-align: middle; height: auto; 
-                    &__row{ color: #212573; font-size: 24px; text-shadow: 15px -15px 1px #e8e9f1;
+                    &__row{ color: @color; font-size: 24px; text-shadow: 15px -15px 1px #e8e9f1;
                         &_light{
                                 font-family: @f-l;
                         }
@@ -75,11 +122,50 @@ button, input{
 .call-wrap{float: left; width: 100%; text-align: center; margin-top: 80px;}
 
 .call-btn{ display: inline-block; margin: auto; width: auto; cursor: pointer; outline: none; 
-    border: none; padding: 8px 30px; background: #a7c030; color: #fff; font-size: 14px;
+    border: none; padding: 8px 30px; background: @green; color: #fff; font-size: 14px;
     -webkit-transition: .3s linear; transition: .3s linear;
     &:hover{
         background: #53BF35;
     }
+}
+
+.main-title{ float: left; width: 100%; margin-top: 75px; color: @color;
+            &__bold{ float: left; width: 100%; text-transform: uppercase; font-family: @f-m; font-size: 20px; text-shadow: 15px -15px 1px #e8e9f1;}
+            &__light{ float: left; width: 100%; font-family: @f-l; font-size: 17px; }
+}
+
+.our-work{ float: left; width: 100%; margin-top: 80px; }
+
+.work-box{ width: 100%; height: auto; position: relative;
+        &__left{ float: left; width: 50%; margin-right: 50%; 
+                &__line{ position: absolute; top: 0; right: 0; width: 1px; height: 100%; background: @color; }
+                &__circle{ position: absolute; top: 0; right: -5px; width: 11px; height: 11px; background: @color; -webkit-border-radius: 50%; border-radius: 50%; }
+        }
+        &__right{ float: left; width: 50%; margin-left: 50%; 
+                &__line{ position: absolute; top: 0; left: -1px; width: 1px; height: 100%; background: @color; }
+                &__circle{ position: absolute; top: 0; left: -6px; width: 11px; height: 11px; background: @color; -webkit-border-radius: 50%; border-radius: 50%; }
+        }
+    
+        &__wrap{ box-sizing: border-box; padding: 50px 50px 90px; position: relative; }
+        
+        &__shadow{ position: absolute; color: rgba(222, 236, 192, 0.8); z-index: 1; top: 35px; left: 35px; font-size: 26px; font-family: @f-b; font-weight: bold; }
+        &__title{ width: 100%; color: @green; font-size: 18px; line-height: 30px; margin: 5px 0; font-family: @f-m; position: relative; z-index: 2}
+        &__text{ width: 100%; color: @color; font-size: 13px; font-family: @f-l; }
+    
+}
+
+.main-line{ float: left; width: 11px; height: auto; margin-left: 20px; margin-right: 20px;
+        &__circle{ float: left; width: 11px; height: 11px; background: @color; -webkit-border-radius: 50%; border-radius: 50%; 
+                &__1{ position: relative; }
+        }
+    
+    
+        &__line{ float: left; width: 1px; margin-left: 5px; background: @color;
+                &_100{ height: 100px; }  
+                &_150{ height: 150px; }   
+                &_200{ height: 200px; } 
+                &_250{ height: 250px; }   
+        }
 }
 
 .footer{ float: left; width: 100%; box-sizing: border-box; padding: 60px 0 40px; margin-top: 70px; background: @color; }
@@ -118,4 +204,8 @@ button, input{
 }
 .foot-right{ float: right; }
 
-.leave-call, .foot-addr{ font-size: 11px; color: #fff; font-family: @f-l; }
+.leave-call, .foot-addr{ margin-top: 3px; font-size: 11px; color: #fff; font-family: @f-l; }
+
+.foo-ico{ height: 11px ; width: auto; margin-right: 5px;
+    & img{ height: inherit; width: auto; }    
+} 

@@ -313,10 +313,8 @@
 /* CUSTOM */
 .slick-slider{
     float: left;
-    width: 70%;
-    margin-top: 75px;
-    margin-left: 15%;
-    margin-right: 15%;
+    width: 100%;
+    margin: 50px 0;
 
     position: relative;
 }
@@ -336,17 +334,17 @@
 .slick-prev:before{
     position: absolute;
     
-    height: 55px;
-    width: 55px;
-    background: url(../img/arrow-left.png) center center no-repeat;
+    height: 30px;
+    width: 30px;
+    background: url(../img/green-prev.png) center center no-repeat;
     background-size: cover;
 }
  .slick-next:before {
     position: absolute;
     
-    height: 55px;
-    width: 55px;
-    background: url(../img/arrow-right.png) center center no-repeat;
+    height: 30px;
+    width: 30px;
+    background: url(../img/green-next.png) center center no-repeat;
     background-size: cover;
 }
 .slick-img{
@@ -371,6 +369,76 @@
     font-family: "GothamProRegular";
 }
 
+/* slick-slider-0 */
+
+#slick-slider-0{
+    width: 100%;
+    float: left;
+    
+    margin-top: 80px;
+}
+
+#slick-slider-0 img{
+    width: 100%;
+    margin: auto;
+}
+#slick-slider-0 .slick-prev{
+    top: auto;
+    left: auto;
+    bottom: 50px;
+    right: 80px;
+}
+#slick-slider-0 .slick-next{
+    top: auto;
+    left: auto;
+    bottom: 50px;
+    right: 40px;
+}
+
+/* slick-slider-main */
+
+#slick-slider-main{
+    width: 100%;
+    
+    margin: 0;
+}
+#slick-slider-main img{
+    width: 100%;
+    margin: auto;
+}
+#slick-slider-main .slick-prev{
+    top: auto;
+    left: auto;
+    bottom: 48%;
+    left: -93%;
+}
+#slick-slider-main .slick-next{
+    top: auto;
+    left: auto;
+    bottom: 48%;
+    right: auto;
+    left: calc(-93% + 40px);
+}
+
+
+/* slick-slider-1 */
+
+.slick-slider-1 img{
+    height: 50px;
+    margin: auto;
+}
+.slick-slider-1 .slick-prev{
+    top: auto;
+    left: auto;
+    bottom: -50px;
+    right: 40px;
+}
+.slick-slider-1 .slick-next{
+    top: auto;
+    left: auto;
+    bottom: -50px;
+    right: 0;
+}
 
 /* SLICK SLIDER 2*/
 
@@ -463,8 +531,7 @@
 
 @media only screen and (max-width : 800px) { 
 	.slick-slider{
-		width: 50%;
-		margin-left: 25%;
-		margin-right: 25%;
+		width: 100%;
+		margin: 0;
 	}
 }
