@@ -38,7 +38,7 @@ button, input{
 
 .opacity-one{ opacity: 1; }
 
-.modal{  display: block;  margin: 150px auto;  height: auto;  min-height: 200px; width: 700px; background: #fff; color: #3b3b3b;
+.modal{  display: block;  margin: 150px auto;  height: auto;  min-height: 200px; max-width: 700px; width: 90%; background: #fff; color: #3b3b3b;
     text-align: center; z-index: 4; padding-top: 20px; padding-bottom: 2px; display: none; position: relative; }
 
 .btns-row{ float: left; width: 100%; margin-top: 25px;}
@@ -80,6 +80,32 @@ button, input{
 .nav-logo{ float: left; width: 175px; height: @height-nav; background: url(../img/logo.png); background-size: cover; }
 
 .navigation-left{ float: right; width: auto; }
+
+.navigation-mobile{ float: left; width: 100%; height: 40px; background: @color; display: none;}
+
+.burger{float: left; width: 40px; height: 40px; position: relative; cursor: pointer }
+
+.burger-1, .burger-2, .burger-3{ position: absolute; height: 3px; left: 10%; width: 80%; background: #fff; -webkit-transition: 1s cubic-bezier(.32,.77,.67,.4); transition: 1s cubic-bezier(.32,.77,.67,.4); }
+
+.burger-1{ top: 10px; }
+.burger-2{ top: 19px; }
+.burger-3{ top: 28px; }
+
+.nav-active .burger-1{ top: 19px; transform: rotate(-45deg);}
+.nav-active .burger-2{ top: -50px; left: -30px; }
+.nav-active .burger-3{ top: 19px; transform: rotate(45deg); }
+
+.mob-logo-wrap { float: left; width: ~"calc(100% - 150px)"; text-align: center; }
+
+.mob-logo{ display: inline-block; height: 40px; }
+
+.mob-logo img { height: 30px; width: auto; margin: 5px 0 5px 40px;}
+
+.mob-tel{ float: right; width: auto; color: #fff; }
+
+.mob-tel-1{ margin-top: 3px; width: 100%; text-align: right; font-size: 10px; } 
+
+.mob-tel-2{ width: 100%; text-align: right; font-size: 12px; } 
 
 .nav{ display: inline-block; width: auto; margin-left: 10px; font-size: 12px; font-family: @f-l; color: #fff; line-height: @height-nav; 
     &:hover{text-decoration: underline}
@@ -198,6 +224,7 @@ button, input{
 .foot-left input{ display: inline-block;margin-top: 10px;outline: none;border: none; 
     background: rgba(0,0,0,0); border-bottom: 1px solid #fff;color: #fff;
 }
+.foot-mobile{ float: left; width: 100%; margin-bottom: 15px; text-align: center; display: none; }
 .btn-foot{ display: inline-block; outline: none; border: none; background: rgba(0,0,0,0); 
     border: 1px solid #fff; color: #fff; font-size: 12px; -webkit-transition: .3s linear; transition: .3s linear;
     &:hover{ background: #fff; color: #000; }

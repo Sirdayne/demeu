@@ -62,6 +62,24 @@
     </div> 
     
 <header class="header">
+    <div class="navigation-mobile">
+        <div class="wrap">
+            <div class="burger">
+                <div class="burger-1"></div>
+                <div class="burger-2"></div>
+                <div class="burger-3"></div>
+            </div>
+            
+            <div class="mob-logo-wrap">
+                <a href=""><div class="mob-logo"><img src="./img/logo.png" alt=""></div></a>
+            </div>
+            
+            <div class="mob-tel">
+                <div class="mob-tel-1">Служба поддержки</div>
+                <div class="mob-tel-2">8 (7172) 27-02-33</div>
+            </div>
+        </div>
+    </div>
     <div class="wrap">
         <div class="header__telephone">Круглосуточная служба поддержки: 8 (7172) 27-02-33</div>
         
@@ -309,6 +327,11 @@
             <a href=""><nav class="foot">контакты</nav></a>
         </div>
         <div class="foot-row-2">
+            <div class="foot-mobile">
+                <div class="foot-addr"><span class="foo-ico"><img src="./img/foo-tel.png" alt=""></span>+7 7172 27 02 33</div>
+                <div class="foot-addr"><span class="foo-ico"><img src="./img/foo-con.png" alt=""></span>ул. Енбекшилер 26,
+                Астана, Казахстан</div>
+            </div>
             <div class="foot-left">
                 <div class="leave-call">Оставьте заявку</div>
                 <div class="leave-call">для получения дополнительной информации
@@ -394,13 +417,13 @@
         autoplaySpeed: 4000,
         responsive: [
         {
-          breakpoint: 800,
+          breakpoint: 1000,
           settings: {
             slidesToShow: 2,
           }
         },
         {
-          breakpoint: 480,
+          breakpoint: 700,
           settings: {
             slidesToShow: 1,
           }

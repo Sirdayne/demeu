@@ -1,11 +1,17 @@
 $(document).ready(function(){
 	                       
-    $('body').on('click','.modal-back, .modal-close',function(){
+    $('body').on('click','.modal-back, .modal-close' , function(){
         $('.modal-back, .modal, .thx, .modal-calc').fadeOut(500);
     });
     
-    $('body').on('click','.jk',function(){
+    $('body').on('click','.jk' , function(){
         $('.modal-back, .modal').fadeIn(500);
+    });
+    
+    // BURGER
+    $('body').on('click','.burger' , function(){
+        $(this).toggleClass('nav-active');
+        $('.navigation').toggleClass('nav-active');
     });
     
     // LINE BLOCK
